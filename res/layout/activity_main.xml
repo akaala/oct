@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="1">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+    <fragment android:name="com.example.myapp.fragment.PM_Header"
+              android:id="@+id/pm_header"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              tools:layout="@layout/pm_header"/>
+    <fragment android:name="com.example.myapp.fragment.PM_Main"
+              android:id="@+id/pm_main"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              tools:layout="@layout/pm_main"/>
+    <fragment android:name="com.example.myapp.fragment.PM_Place"
+              android:id="@+id/pm_place"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              tools:layout="@layout/pm_place"/>
+    </LinearLayout>
+</ScrollView>
+

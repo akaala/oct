@@ -1,0 +1,23 @@
+com.example.myapp.BuildConfig
+com.example.myapp.R
+com.example.myapp.R$attr
+com.example.myapp.R$drawable
+com.example.myapp.R$id
+com.example.myapp.R$layout
+com.example.myapp.R$string
+com.example.myapp.fragment.PM_Header
+com.example.myapp.fragment.PM_Place
+com.example.myapp.provider.StudentsProvider:
+    static final java.lang.String PROVIDER_NAME
+    static final java.lang.String URL
+    public static final java.lang.String _ID
+    public static final java.lang.String NAME
+    public static final java.lang.String GRADE
+    static final int STUDENTS
+    static final int STUDENT_ID
+    static final java.lang.String Database_Name
+    static final java.lang.String STUDENTS_TABLE_NAME
+    static final int DATABASE_VERSION
+    static final java.lang.String CREATE_DB_TABLE
+com.example.myapp.service.MyService:
+    java.util.Timer timer

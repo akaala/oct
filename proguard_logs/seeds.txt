@@ -1,0 +1,37 @@
+com.example.myapp.CustomActivity
+com.example.myapp.CustomActivity: CustomActivity()
+com.example.myapp.MyActivity
+com.example.myapp.MyActivity: MyActivity()
+com.example.myapp.MyActivity: void startService(android.view.View)
+com.example.myapp.MyActivity: void stopService(android.view.View)
+com.example.myapp.MyActivity: void sendBroadcast(android.view.View)
+com.example.myapp.MyActivity: void onClickAddName(android.view.View)
+com.example.myapp.MyActivity: void onClickRetrieveStudents(android.view.View)
+com.example.myapp.MyActivity: void intentToPhone(android.view.View)
+com.example.myapp.MyActivity: void intentToBrowser(android.view.View)
+com.example.myapp.MyActivity: void startBrowserA(android.view.View)
+com.example.myapp.MyActivity: void StartBrowserB(android.view.View)
+com.example.myapp.MyActivity: void StartBrowserC(android.view.View)
+com.example.myapp.R$drawable: int ic_launcher
+com.example.myapp.R$id: int btnAdd
+com.example.myapp.R$id: int btnRetrieve
+com.example.myapp.R$id: int pm_main
+com.example.myapp.R$id: int show_data
+com.example.myapp.R$id: int txtGrade
+com.example.myapp.R$id: int txtName
+com.example.myapp.R$layout: int custom
+com.example.myapp.R$layout: int main
+com.example.myapp.R$layout: int pm_header
+com.example.myapp.R$layout: int pm_main
+com.example.myapp.R$layout: int pm_place
+com.example.myapp.R$string: int app_name
+com.example.myapp.R$string: int start_button
+com.example.myapp.R$string: int stop_button
+com.example.myapp.fragment.PM_Main
+com.example.myapp.fragment.PM_Main: PM_Main()
+com.example.myapp.provider.StudentsProvider
+com.example.myapp.provider.StudentsProvider: StudentsProvider()
+com.example.myapp.receiver.MyReceiver
+com.example.myapp.receiver.MyReceiver: MyReceiver()
+com.example.myapp.service.MyService
+com.example.myapp.service.MyService: MyService()

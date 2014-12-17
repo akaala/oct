@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="#FFFFBB33"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@drawable/qq_aventa"/>
+
+    <EditText
+            android:id="@+id/id_txt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="16dp"
+            android:hint="input username"
+            android:inputType="textEmailAddress"/>
+
+    <EditText
+            android:id="@+id/id_txt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif"
+            android:hint="input password"
+            android:inputType="textPassword"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+        <Button
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:id="@+id/signup_button"/>
+        <Button
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:text="Log In"
+                android:id="@+id/Login_button"/>
+    </LinearLayout>
+</LinearLayout>

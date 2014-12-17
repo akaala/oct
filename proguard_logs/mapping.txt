@@ -1,0 +1,50 @@
+com.example.myapp.CustomActivity -> com.example.myapp.CustomActivity:
+    void onCreate(android.os.Bundle) -> onCreate
+com.example.myapp.MyActivity -> com.example.myapp.MyActivity:
+    java.lang.String msg -> a
+    void onCreate(android.os.Bundle) -> onCreate
+    void onStart() -> onStart
+    void onResume() -> onResume
+    void onPause() -> onPause
+    void onStop() -> onStop
+    void onDestroy() -> onDestroy
+    void startService(android.view.View) -> startService
+    void stopService(android.view.View) -> stopService
+    void sendBroadcast(android.view.View) -> sendBroadcast
+    void onClickAddName(android.view.View) -> onClickAddName
+    void onClickRetrieveStudents(android.view.View) -> onClickRetrieveStudents
+    void intentToPhone(android.view.View) -> intentToPhone
+    void intentToBrowser(android.view.View) -> intentToBrowser
+    void startBrowserA(android.view.View) -> startBrowserA
+    void StartBrowserB(android.view.View) -> StartBrowserB
+    void StartBrowserC(android.view.View) -> StartBrowserC
+com.example.myapp.fragment.PM_Main -> com.example.myapp.fragment.PM_Main:
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.example.myapp.provider.StudentsProvider -> com.example.myapp.provider.StudentsProvider:
+    android.net.Uri content_uri -> a
+    java.util.HashMap STUDENTS_PROJECTION_MAP -> c
+    android.content.UriMatcher uriMatcher -> b
+    android.database.sqlite.SQLiteDatabase db -> d
+    boolean onCreate() -> onCreate
+    android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> query
+    java.lang.String getType(android.net.Uri) -> getType
+    android.net.Uri insert(android.net.Uri,android.content.ContentValues) -> insert
+    int delete(android.net.Uri,java.lang.String,java.lang.String[]) -> delete
+    int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[]) -> update
+com.example.myapp.provider.StudentsProvider$DatabaseHelper -> com.example.myapp.provider.a:
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+com.example.myapp.receiver.MyReceiver -> com.example.myapp.receiver.MyReceiver:
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.example.myapp.service.MyService -> com.example.myapp.service.MyService:
+    boolean isRun -> a
+    int count -> b
+    java.util.TimerTask task -> c
+    android.os.IBinder onBind(android.content.Intent) -> onBind
+    int onStartCommand(android.content.Intent,int,int) -> onStartCommand
+    void showToast() -> a
+    void onDestroy() -> onDestroy
+    void access$000(com.example.myapp.service.MyService) -> a
+com.example.myapp.service.MyService$1 -> com.example.myapp.service.a:
+    com.example.myapp.service.MyService this$0 -> a
+    void run() -> run
