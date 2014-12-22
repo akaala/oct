@@ -2,21 +2,47 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="96dp"
+              android:layout_height="120dp"
               android:orientation="vertical"
               android:background="@android:color/holo_orange_dark"
               android:baselineAligned="false">
 
-    <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" android:clickable="true"
-           />
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Detail..."
-            android:id="@+id/place_view_button_detail" android:layout_gravity="right"
-            />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="24dp">
+        <TextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Place Name"
+                android:id="@+id/place_name" android:layout_gravity="left"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Scores:"
+                android:id="@+id/place_score" android:layout_gravity="right"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:weightSum="1">
+        <ScrollView
+                android:layout_width="300dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/scrollView2">
+            <TextView
+                    android:layout_width="240dp"
+                    android:layout_height="fill_parent"
+                    android:text="Place Intro"
+                    android:id="@+id/place_intro" android:layout_weight="0.86"/>
+        </ScrollView>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detail..."
+                android:id="@+id/place_view_button_detail"
+                android:layout_gravity="bottom"/>
+    </LinearLayout>
 </LinearLayout>

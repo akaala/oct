@@ -41,7 +41,7 @@
             android:onClick="sendBroadcast"
             />-->
 
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+    <!--<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
               android:text="Name"/>
     <EditText android:id="@+id/txtName" android:layout_height="wrap_content"
               android:layout_width="fill_parent"/>
@@ -50,8 +50,36 @@
     <EditText android:id="@+id/txtGrade" android:layout_height="wrap_content"
               android:layout_width="fill_parent"/>
     <Button android:text="Add Name" android:id="@+id/btnAdd" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:onClick="onClickAddName"/>
+            android:layout_height="wrap_content" android:onClick="onClickAddName"/>-->
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:gravity="center_horizontal"
+            android:clickable="false">
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton3"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton4"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton5"/>
+    </LinearLayout>
+
     <Button android:text="Retrieve Students" android:id="@+id/btnRetrieve"
             android:layout_width="fill_parent" android:layout_height="wrap_content"
-            android:onClick="onClickRetrieveStudents"/>
+            android:onClick="onClickShowPlaces"/>
+
 </LinearLayout>

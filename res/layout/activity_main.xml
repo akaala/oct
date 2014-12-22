@@ -12,17 +12,17 @@
               android:id="@+id/pm_header"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              tools:layout="@layout/pm_header"/>
+              tools:layout="@layout/frag_header"/>
     <fragment android:name="com.example.myapp.fragment.PM_Main"
               android:id="@+id/pm_main"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              tools:layout="@layout/pm_main"/>
+              tools:layout="@layout/frag_main"/>
     <fragment android:name="com.example.myapp.fragment.PM_Place"
               android:id="@+id/pm_place"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              tools:layout="@layout/pm_place"/>
+              tools:layout="@layout/frag_place"/>
     </LinearLayout>
 </ScrollView>
 

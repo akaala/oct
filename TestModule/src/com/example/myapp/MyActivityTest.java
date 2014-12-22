@@ -1,5 +1,7 @@
 package com.example.myapp;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.test.ActivityInstrumentationTestCase2;
 
 /**
@@ -12,6 +14,7 @@ import android.test.ActivityInstrumentationTestCase2;
  * -e class com.example.myapp.MyActivityTest \
  * com.example.myapp.tests/android.test.InstrumentationTestRunner
  */
+@TargetApi(Build.VERSION_CODES.CUPCAKE)
 public class MyActivityTest extends ActivityInstrumentationTestCase2<MyActivity> {
 
     public MyActivityTest() {

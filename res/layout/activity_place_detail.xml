@@ -9,9 +9,13 @@
               android:id="@+id/pm_header"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              tools:layout="@layout/pm_header"/>
+              tools:layout="@layout/frag_header"/>
     <TextView android:id="@+id/show_data" android:layout_width="fill_parent"
               android:layout_height="30dp"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/place_image1"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

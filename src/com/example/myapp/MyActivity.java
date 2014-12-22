@@ -3,7 +3,6 @@ package com.example.myapp;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,7 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.example.myapp.fragment.Frag_Login;
@@ -19,7 +17,10 @@ import com.example.myapp.fragment.PM_Place_View;
 import com.example.myapp.provider.StudentsProvider;
 import com.example.myapp.service.MyService;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MyActivity extends Activity implements PM_Place_View.OnArticleSelectedListener, Frag_Login.LoginInputListener {
@@ -100,42 +101,51 @@ public class MyActivity extends Activity implements PM_Place_View.OnArticleSelec
         sendBroadcast(intent);
     }
 
-    public void onClickAddName(View view) {
-        ContentValues values = new ContentValues();
-        values.put(StudentsProvider.NAME, ((EditText) findViewById(R.id.txtName)).getText().toString());
-        values.put(StudentsProvider.GRADE, ((EditText) findViewById(R.id.txtGrade)).getText().toString());
-        Uri uri = getContentResolver().insert(StudentsProvider.content_uri, values);
-        Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_LONG).show();
-    }
+    public void onClickShowPlaces(View view) {
+//        String URL = "content://com.example.provider.College/students";
+//        Map<String, String> name2Grade = new HashMap<>();
+//        Uri students = Uri.parse(URL);
+//
+//        CursorLoader cursorLoader = new CursorLoader(getBaseContext(), students, null, null, null,
+//                "name");
+////        Cursor c = managedQuery(students, null, null, null, "name");
+//        Cursor c = cursorLoader.loadInBackground();
+//        if (c.moveToFirst()) {
+//            do {
+////                Toast.makeText(this, c.getString(c.getColumnIndex(StudentsProvider._ID)) + ", "
+////                        + c.getString(c.getColumnIndex(StudentsProvider.NAME)) + ", "
+////                        + c.getString(c.getColumnIndex(StudentsProvider.GRADE)), Toast.LENGTH_SHORT).show();
+//                String name = c.getString(c.getColumnIndex(StudentsProvider.NAME));
+//                String grade = c.getString(c.getColumnIndex(StudentsProvider.GRADE));
+//                name2Grade.put(name, grade);
+//            } while (c.moveToNext());
+//        }
+        ArrayList<String> places = new ArrayList();
+        try {
+            InputStreamReader  dataIO = new InputStreamReader(getResources().openRawResource(R.raw
+                    .place_data), "utf-8");
 
-    public void onClickRetrieveStudents(View view) {
-        String URL = "content://com.example.provider.College/students";
-        Map<String, String> name2Grade = new HashMap<>();
-        Uri students = Uri.parse(URL);
-
-        CursorLoader cursorLoader = new CursorLoader(getBaseContext(), students, null, null, null,
-                "name");
-//        Cursor c = managedQuery(students, null, null, null, "name");
-        Cursor c = cursorLoader.loadInBackground();
-        if (c.moveToFirst()) {
-            do {
-//                Toast.makeText(this, c.getString(c.getColumnIndex(StudentsProvider._ID)) + ", "
-//                        + c.getString(c.getColumnIndex(StudentsProvider.NAME)) + ", "
-//                        + c.getString(c.getColumnIndex(StudentsProvider.GRADE)), Toast.LENGTH_SHORT).show();
-                String name = c.getString(c.getColumnIndex(StudentsProvider.NAME)) ;
-                String grade = c.getString(c.getColumnIndex(StudentsProvider.GRADE));
-                name2Grade.put(name, grade);
-            } while (c.moveToNext());
+            BufferedReader reader = new BufferedReader(dataIO);
+            String line;
+            try {
+                while ((line = reader.readLine()) != null) {
+                    places.add(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            Log.d(msg, e.getLocalizedMessage());
         }
 
-        showPlaces(name2Grade);
 
 
 
+        showPlaces(places);
     }
 
-    private void showPlaces(Map<String, String> map) {
-        final LinearLayout layout2=(LinearLayout) findViewById(R.id.scroll_view_places_layout);
+    private void showPlaces(ArrayList<String> places) {
+        final LinearLayout layout2 = (LinearLayout) findViewById(R.id.scroll_view_places_layout);
         layout2.removeAllViews();
 
         //1.获取FragmentManager对象
@@ -143,10 +153,14 @@ public class MyActivity extends Activity implements PM_Place_View.OnArticleSelec
         //2.获取FragmentTransaction对象
         FragmentTransaction transaction = manager.beginTransaction();
         //添加Fragment对象
-        PM_Place_View placeView = new PM_Place_View();
-        placeView.buildData(map);
+        for (String place : places) {
 
-        transaction.add(R.id.scroll_view_places_layout, placeView , "frag_place_view");
+            PM_Place_View placeView = new PM_Place_View();
+
+            placeView.buildData(place);
+
+            transaction.add(R.id.scroll_view_places_layout, placeView, "frag_place_view");
+        }
         //4.提交
         transaction.commit();
     }
@@ -175,16 +189,7 @@ public class MyActivity extends Activity implements PM_Place_View.OnArticleSelec
         startActivity(i);
     }
 
-    @Override
-    public void onItemSelected(String name, String grade) {
-        Intent i = new Intent("example.LAUNCH", Uri.parse("http://www.baidu.com"));
-        i.putExtra("name", name);
-        i.putExtra("grade", grade);
-        startActivity(i);
-    }
-
-    public void showLogInFragment(View view)
-    {
+    public void showLogInFragment(View view) {
         Frag_Login dialog = new Frag_Login();
         dialog.show(getFragmentManager(), "loginDialog");
     }
@@ -193,5 +198,14 @@ public class MyActivity extends Activity implements PM_Place_View.OnArticleSelec
     public void onLoginInputComplete(String username, String password) {
         Toast.makeText(this, "帐号：" + username + ",  密码 :" + password,
                 Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemSelected(String name, List<String> picUrls, String intro) {
+        Intent i = new Intent("example.LAUNCH", Uri.parse("http://www.baidu.com"));
+        i.putExtra("name", name);
+        i.putExtra("picUrls", picUrls.toArray());
+        i.putExtra("intro", intro);
+        startActivity(i);
     }
 }

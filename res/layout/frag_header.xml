@@ -5,11 +5,12 @@
               android:layout_width="match_parent"
               android:layout_height="48dp" android:weightSum="1">
     <TextView android:layout_width="225dp" android:layout_height="match_parent"
-              android:text="Shanghai" android:id="@+id/city"/>
+              android:text="上海" android:id="@+id/city" android:textSize="24dp"
+              style="@android:style/Theme.Holo.Panel"/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:id="@+id/imageButton" android:src="@drawable/qq_aventa"
+            android:id="@+id/imageButton" android:src="@drawable/glyphicons_4_user"
             android:onClick="showLogInFragment"
             />
     <Spinner
