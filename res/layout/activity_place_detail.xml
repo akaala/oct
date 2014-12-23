@@ -5,24 +5,34 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <fragment android:name="com.example.myapp.fragment.PM_Header"
-              android:id="@+id/pm_header"
-              android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              tools:layout="@layout/frag_header"/>
-    <TextView android:id="@+id/show_data" android:layout_width="fill_parent"
-              android:layout_height="30dp"/>
+    <!--<fragment android:name="com.example.myapp.fragment.PM_Header"-->
+              <!--android:id="@+id/pm_header"-->
+              <!--android:layout_width="fill_parent"-->
+              <!--android:layout_height="wrap_content"-->
+              <!--tools:layout="@layout/frag_header"/>-->
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:id="@+id/scrollView">
+            <TextView android:id="@+id/show_data" android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"/>
+        </ScrollView>
+        <Button
+                android:layout_width="33dp"
+                android:layout_height="wrap_content"
+                android:text="Book..."
+                android:id="@+id/Button_place_detail_book"
+                android:onClick="doBook"
+                android:layout_gravity="right"/>
+    </LinearLayout>
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:id="@+id/place_image1"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Book..."
-            android:id="@+id/Button_place_detail_book"
-            android:onClick="doBook"
-            android:layout_gravity="right"/>
     <!--<TextView-->
             <!--android:id="@+id/type_here"-->
             <!--android:layout_width="match_parent"-->

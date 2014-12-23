@@ -2,11 +2,15 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
-              android:layout_width="match_parent"
+              android:layout_width="fill_parent"
               android:layout_height="48dp" android:weightSum="1">
     <TextView android:layout_width="225dp" android:layout_height="match_parent"
-              android:text="上海" android:id="@+id/city" android:textSize="24dp"
+              android:text="上海" android:id="@+id/city" android:textSize="20dp"
               style="@android:style/Theme.Holo.Panel"/>
+    <ImageButton android:layout_width="wrap_content" android:layout_height="fill_parent"
+                 android:id="@+id/imageButton2" android:src="@drawable/glyphicons_28_search"
+
+                 android:contentDescription="Search..."/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
@@ -16,5 +20,6 @@
     <Spinner
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/spinner" android:spinnerMode="dropdown"/>
+            android:id="@+id/spinner" android:spinnerMode="dropdown"
+            android:prompt="@string/Spinner_Menu"/>
 </LinearLayout>

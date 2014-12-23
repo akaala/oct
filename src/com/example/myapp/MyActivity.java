@@ -137,10 +137,6 @@ public class MyActivity extends Activity implements PM_Place_View.OnArticleSelec
         } catch (Exception e) {
             Log.d(msg, e.getLocalizedMessage());
         }
-
-
-
-
         showPlaces(places);
     }
 

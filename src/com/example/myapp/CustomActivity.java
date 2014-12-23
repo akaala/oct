@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.myapp.task.LoadImageTask;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,8 +29,10 @@ public class CustomActivity extends Activity {
         label.setText(name + ":" + intro);
 
         ImageView imView = (ImageView) findViewById(R.id.place_image1);
+
         if (picUrls.length >= 2) {
-            imView.setImageBitmap(returnBitMap(picUrls[0]));
+            new LoadImageTask(imView).execute( picUrls[0]);
+//            imView.setImageBitmap(returnBitMap(picUrls[0]));
         }
     }
 
